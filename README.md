@@ -14,7 +14,23 @@ All scripts automatically copy the transformed text to your system clipboard!
 
 ## Installation
 
-### Linux/macOS (Unix-like systems)
+### Quick Install (Linux/macOS)
+
+```bash
+git clone https://github.com/stringsn88keys/script_flips.git
+cd script_flips
+./install.sh
+```
+
+The install script will:
+- Make all scripts executable
+- Check for clipboard utilities
+- Test all scripts
+- Provide setup instructions
+
+### Manual Installation
+
+#### Linux/macOS (Unix-like systems)
 
 1. Clone the repository:
 ```bash
@@ -56,6 +72,7 @@ sudo pacman -S xsel
 
 ### Linux/macOS Scripts
 
+#### Individual Scripts
 ```bash
 # Rage flip (upside-down text)
 ./unix/rage_flip.sh "Hello World!"
@@ -78,8 +95,20 @@ sudo pacman -S xsel
 # Output: H̶e̶l̶l̶o̶ W̶o̶r̶l̶d̶!̶
 ```
 
+#### Unified Script (Recommended)
+```bash
+# Use the unified script for all transformations
+./unix/text_flip.sh rage "Hello World!"
+./unix/text_flip.sh sarcasm "This is so cool"
+
+# See all transformations at once
+./unix/text_flip.sh all "Hello World!"
+# Shows all effects and lets you choose which to copy
+```
+
 ### Windows PowerShell Scripts
 
+#### Individual Scripts
 ```powershell
 # Rage flip (upside-down text)
 .\windows\RageFlip.ps1 "Hello World!"
@@ -102,6 +131,17 @@ sudo pacman -S xsel
 # Output: H̶e̶l̶l̶o̶ W̶o̶r̶l̶d̶!̶
 ```
 
+#### Unified Script (Recommended)
+```powershell
+# Use the unified script for all transformations
+.\windows\TextFlip.ps1 rage "Hello World!"
+.\windows\TextFlip.ps1 sarcasm "This is so cool"
+
+# See all transformations at once
+.\windows\TextFlip.ps1 all "Hello World!"
+# Shows all effects and lets you choose which to copy
+```
+
 ## Examples
 
 Transform "Hello World!" with different effects:
@@ -119,18 +159,21 @@ Transform "Hello World!" with different effects:
 
 ```
 script_flips/
-├── unix/           # Linux/macOS bash scripts
+├── unix/               # Linux/macOS bash scripts
 │   ├── rage_flip.sh
 │   ├── word_flip.sh
 │   ├── underline.sh
 │   ├── sarcasm.sh
-│   └── strikethrough.sh
-├── windows/        # Windows PowerShell scripts
+│   ├── strikethrough.sh
+│   └── text_flip.sh    # 🌟 Unified script (recommended)
+├── windows/            # Windows PowerShell scripts
 │   ├── RageFlip.ps1
 │   ├── WordFlip.ps1
 │   ├── Underline.ps1
 │   ├── Sarcasm.ps1
-│   └── Strikethrough.ps1
+│   ├── Strikethrough.ps1
+│   └── TextFlip.ps1    # 🌟 Unified script (recommended)
+├── install.sh          # Installation script for Unix
 └── README.md
 ```
 
